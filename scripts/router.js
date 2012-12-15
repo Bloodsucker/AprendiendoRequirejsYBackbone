@@ -1,7 +1,10 @@
 define([
 	'underscore',
-	'backbone'
-] , function (_, Backbone) {
+	'backbone',
+	'app/View/Portada',
+	'app/Collection/Peliculas',
+	'app/Collection/Actores'
+] , function (_, Backbone, PortadaView, Peliculas, Actores) {
 
 	var AppRouter = Backbone.Router.extend({
 		routes: {
@@ -18,7 +21,12 @@ define([
 		},
 		
 		portada: function(){
-			console.log("Portada");
+			console.log("En portada.");
+			var portadaView = new PortadaView({
+				peliculas: new Peliculas([]),
+				actores: new Actores([])
+			});
+			portadaView.render();
 		},
 		pelicula: function(peliID){
 			console.log('Película: '+peliID);

@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'app/Collection/Actor'
+	'app/Collection/Actores'
 ],
 function (Backbone, ActorCollection) {
 	var Pelicula = Backbone.Model.extend({

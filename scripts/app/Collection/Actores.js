@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'app/Collection/Actor'
+	'app/Model/Actor'
 ], function (Actor) {
   var ActorCollection = Backbone.Collection.extend({
     model: Actor

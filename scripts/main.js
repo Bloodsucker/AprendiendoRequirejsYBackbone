@@ -1,8 +1,14 @@
 require.config({
 	paths: {
 		underscore: 'libs/underscore-min',
-		backbone: 'libs/backbone-min'
+		backbone: 'libs/backbone-min',
+		
+		text: 'libs/rjsPlugins/text',
+		
+		templates: '../templates'
 	},
+	
+	baseUrl: '/AprendiendoRequirejsYBackbone/scripts/',
 	
 	shim: {
 		'underscore' : {
