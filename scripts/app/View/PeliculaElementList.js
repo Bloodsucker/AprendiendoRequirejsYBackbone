@@ -7,7 +7,9 @@ define([
 	var PeliculaListView = Backbone.View.extend({
 		template: _.template(peliculaListTemplate),
 		render: function(){
-			this.$el.html( this.template( this.peliculaModel.toJSON() ) );
+			var template = this.template( this.model.toJSON() );
+			this.setElement( $(template) );
+			return this;
 		}
 	});
 	

@@ -5,6 +5,8 @@ require.config({
 		
 		text: 'libs/rjsPlugins/text',
 		
+		relationalModel: 'libs/BackbonePlugins/backbone-relational',
+		
 		templates: '../templates'
 	},
 	
@@ -17,7 +19,8 @@ require.config({
 		'backbone' : {
 			deps: ['underscore'],
 			exports: "Backbone"
-		}
+		},
+		'relationalModel' : ['backbone']
 	}
 });
 

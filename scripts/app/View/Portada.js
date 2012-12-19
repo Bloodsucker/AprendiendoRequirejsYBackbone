@@ -14,29 +14,30 @@ define([
 			this.peliculaViews = [];
 			this.actorViews = [];
 			
-			_.each(this.peliculas, function(pelicula){
+			this.model.get('peliculas').each(function(pelicula){
 				self.peliculaViews.push( new PeliculaElementList({
-					peliculaModel: pelicula
+					model: pelicula
 				}));
 			});
 			
-			_.each(this.actores, function(actor){
+			this.model.get('actores').each( function(actor){
 				self.actorViews.push(new ActorElementList({
-					actorModel: actor
+					model: actor
 				}));
 			});
 		},
 		render: function(){
 			var self = this;
-			this.$el.html( this.template() );
+			var foo = this.template();
+			this.$el.html( foo );
 			
 			_.each(this.peliculaViews, function(peliculaView){
-				self.$el.append( peliculaView.render().$el );
+				self.$el.find('#nuevasPeliculas ul').append( peliculaView.render().$el );
 			});
 			
 			
 			_.each(this.actorViews, function(actorView){
-				self.$el.append( actorView.render().$el );
+				self.$el.find('#nuevosActores ul').append( actorView.render().$el );
 			});
 		}
 	});

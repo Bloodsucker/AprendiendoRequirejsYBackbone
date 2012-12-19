@@ -7,7 +7,9 @@ define([
 	var ActorListView = Backbone.View.extend({
 		template: _.template(ActorListTemplate),
 		render: function(){
-			this.$el.html( this.template( this.actorModel.toJSON() ) );
+			var $template = $( this.template( this.model.toJSON() ));
+			this.setElement( $template );
+			return this;
 		}
 	});
 	

@@ -1,8 +1,9 @@
 define([
-	'backbone'
+	'backbone',
+	'relationalModel'
 ],
 function (Backbone) {
-	var Actor = Backbone.Model.extend();
+	var Actor = Backbone.RelationalModel.extend();
 	
 	return Actor;
 });
